@@ -12,22 +12,6 @@
   allow_failure: true
 
 # Terraform image config 
-# for setup S3 backend
-.tf_s3_backend:
-  image:
-    name: $AWS_INFRA_REGISTRY/terraform:$TERRAFORM_VERSION
-    entrypoint:
-      - '/usr/bin/env'
-      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
-  after_script:
-    - echo "Running ls from template"
-    - ls
-    - terraform init
-    - terraform plan -var-file=backend.tfvars
-    - terraform apply -var-file=backend.tfvars -auto-approve
-    - terraform destroy -var-file=backend.tfvars -auto-approve
-
-# Terraform image config 
 # for usual Terraform modules
 .terraform:
   image:
