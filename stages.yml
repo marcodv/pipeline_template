@@ -20,6 +20,8 @@
       - '/usr/bin/env'
       - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
   after_script:
+    - echo "Running ls from template"
+    - ls
     - terraform init
     - terraform plan -var-file=backend.tfvars
     - terraform apply -var-file=backend.tfvars -auto-approve
