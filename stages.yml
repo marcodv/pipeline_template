@@ -4,6 +4,7 @@
 # Run tf modules scan and 
 # does not block the pipeline in case of failure
 .module_security_scan:
+  stage: run-security-scan
   image:
     name: $AWS_INFRA_REGISTRY/tfsec:$TFSEC_VERSION
     entrypoint: [""]
