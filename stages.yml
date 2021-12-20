@@ -1,0 +1,12 @@
+# This file contains all the stages/jobs that can be 
+# called/configured across all pipelines
+
+# Run tf modules scan and 
+# does not block the pipeline in case of failure
+.module_security_scan:
+  image:
+    name: $AWS_INFRA_REGISTRY/tfsec:$TFSEC_VERSION
+    entrypoint: [""]
+  after_script:
+    - tfsec .
+  allow_failure: true
