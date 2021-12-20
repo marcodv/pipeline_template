@@ -10,3 +10,11 @@
   after_script:
     - tfsec .
   allow_failure: true
+
+# Terraform image config
+.terraform:
+  image:
+    name: $AWS_INFRA_REGISTRY/terraform:$TERRAFORM_VERSION
+    entrypoint:
+      - '/usr/bin/env'
+      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
