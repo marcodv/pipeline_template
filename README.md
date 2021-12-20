@@ -17,5 +17,6 @@ This is a **continuos WIP** and it changes frequently, depends by the different 
 
 This repo is organized in this way (WIP)
 
-- [variables.yml](https://gitlab.com/noah-energy/noah-pipelines-templates/-/blob/develop/variables.yml): variables regards software versions, container registries, projects endpoints, etc etc
-- stages.yml: stages used to test, build, deploy artifacts or setup AWS Infrastructure via Terraform
+- [variables.yml](variables.yml): variables regards software versions, container registries, projects endpoints, etc etc
+- [stages.yml](stages.yml): stages used to test, build, deploy artifacts or setup AWS Infrastructure via Terraform
+

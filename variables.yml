@@ -9,4 +9,4 @@ variables:
   TERRAFORM_VERSION: "1.1.0"
   AWS_PROD_ENV: "prod"
   AWS_TEST_ENV: "test"
-  TF_CREATE_BACKEND_MODULE: "create-tf-backend"
+  TF_CREATE_BACKEND_MODULE_DIR: "create-tf-backend"
