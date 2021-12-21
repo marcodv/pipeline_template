@@ -1,0 +1,47 @@
+# This file contains all the stages/jobs that can be 
+# called/configured across all pipelines
+
+# Run tf modules scan and 
+# does not block the pipeline in case of failure
+.module_security_scan:
+  image:
+    name: $AWS_INFRA_REGISTRY/tfsec:$TFSEC_VERSION
+    entrypoint: [""]
+  variables:
+    PATH_TO_SCAN: ""
+  after_script:
+    - if [[ -z "$PATH_TO_SCAN" ]] ; then PATH_TO_SCAN="." ; fi
+    - tfsec $PATH_TO_SCAN
+  allow_failure: true
+
+# Terraform image config 
+# setup S3 backend
+.terraform_s3_backend
+  image:
+    name: $AWS_INFRA_REGISTRY/terraform:$TERRAFORM_VERSION
+    entrypoint:
+      - '/usr/bin/env'
+      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+  variables:
+    AWS_PROFILE_ENV: ""
+    MODULE_PATH_ENV: ""
+  after_script:
+    - export AWS_PROFILE=$AWS_PROFILE_ENV
+    - cd $MODULE_PATH_ENV
+    - ls
+    - pwd
+    - echo $MODULE_PATH_ENV $AWS_PROFILE_ENV
+    - terraform init
+    - terraform plan -var-file=backend.tfvars
+    - terraform apply -var-file=backend.tfvars -auto-approve
+    - terraform destroy -var-file=backend.tfvars -auto-approve
+
+
+# Terraform image config 
+# for usual Terraform modules
+.terraform:
+  image:
+    name: $AWS_INFRA_REGISTRY/terraform:$TERRAFORM_VERSION
+    entrypoint:
+      - '/usr/bin/env'
+      - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
