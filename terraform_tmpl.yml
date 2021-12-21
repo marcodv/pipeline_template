@@ -16,7 +16,7 @@
 
 # Terraform image config 
 # setup S3 backend
-.terraform_s3_backend
+.terraform_s3_backend:
   image:
     name: $AWS_INFRA_REGISTRY/terraform:$TERRAFORM_VERSION
     entrypoint:
