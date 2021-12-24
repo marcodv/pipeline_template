@@ -28,7 +28,7 @@
   after_script:
     - export AWS_PROFILE=$AWS_PROFILE_ENV
     - cd $MODULE_PATH_ENV
-    - echo "Printing files in dir:  $MODULE_PATH_ENV"
+    - echo "Printing files in dir $MODULE_PATH_ENV"
     - ls
     - terraform init
     - terraform plan -var-file=backend.tfvars
