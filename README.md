@@ -24,18 +24,18 @@ This is a **continuos WIP** and it changes frequently, depends by the different 
 This repo is organized in this way (WIP)
 
 - [variables.yml](variables.yml): variables regards software versions, container registries, projects endpoints, etc etc
-- [stages.yml](stages.yml): stages used to test, build, deploy artifacts or setup AWS Infrastructure via Terraform
+- [terraform_tmpl.yml](terraform_tmpl.yml): stages used to test, build, deploy artifacts or setup AWS Infrastructure via Terraform
 
 ## Usage
 
-To use these templates, you need to include the resources that you need e.g. **stages.yml** or **variables.yml** in your .gitlab-ci.yml like in the example below
+To use these templates, you need to include the resources that you need e.g. **terraform_tmpl.yml** or **variables.yml** in your .gitlab-ci.yml like in the example below
 
 <pre>
 include:
   - project: 'noah-energy/noah-pipelines-templates'
     file:    'variables.yml'
   - project: 'noah-energy/noah-pipelines-templates'
-    file:    'stages.yml'
+    file:    'terraform_tmpl.yml'
 </pre>
 
 Once you included these, you can access to the variables available at group level in this way
