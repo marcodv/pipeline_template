@@ -28,9 +28,8 @@
   after_script:
     - export AWS_PROFILE=$AWS_PROFILE_ENV
     - cd $MODULE_PATH_ENV
+    - echo "Printing files in dir:  $MODULE_PATH_ENV"
     - ls
-    - pwd
-    - echo $MODULE_PATH_ENV $AWS_PROFILE_ENV
     - terraform init
     - terraform plan -var-file=backend.tfvars
     - terraform apply -var-file=backend.tfvars -auto-approve
