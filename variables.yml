@@ -13,3 +13,5 @@ variables:
   AWS_PROFILE_BACKEND_USER_PROD: "prod-backend-s3"
   TF_CREATE_BACKEND_MODULE_DIR_TEST: "test/create-tf-backend"
   TF_CREATE_BACKEND_MODULE_DIR_PROD: "prod/create-tf-backend"
+  TF_USER_TEST_ENV: "terraform_user_test_env"
+  TF_USER_PROD_ENV: "terraform_user_prod_env"
