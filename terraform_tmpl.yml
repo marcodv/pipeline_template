@@ -42,3 +42,7 @@
     entrypoint:
       - '/usr/bin/env'
       - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+  variables:
+    AWS_PROFILE_ENV: ""
+  before_script:
+    - export AWS_PROFILE=$AWS_PROFILE_ENV
