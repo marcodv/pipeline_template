@@ -2,8 +2,8 @@
 # called/configured across all pipelines
 
 variables:
-  AWS_INFRA_REGISTRY: "registry.gitlab.com/noah-energy/infra_aws"
-  TF_AWS_BACKEND_REGISTRY: "registry.gitlab.com/noah-energy/terraform_aws_backend_setup"
+  AWS_INFRA_REGISTRY: "registry.gitlab.com/noah-energy/infranoah/infra_aws"
+  TF_AWS_BACKEND_REGISTRY: "registry.gitlab.com/noah-energy/infranoah/terraform_aws_backend_setup"
   PIPELINE_TEMPLATES_REGISTRY: "registry.gitlab.com/noah-energy/noah-pipelines-templates"
   TFSEC_VERSION: "0.62.0"
   TERRAFORM_VERSION: "1.1.3"
