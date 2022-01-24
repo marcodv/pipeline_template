@@ -15,3 +15,4 @@ variables:
   TF_CREATE_BACKEND_MODULE_DIR_PROD: "prod/create-tf-backend"
   TF_USER_TEST_ENV: "terraform_user_test_env"
   TF_USER_PROD_ENV: "terraform_user_prod_env"
+  TF_USER_DURABLE_TEST_ENV: "test-user-durable-resources"
