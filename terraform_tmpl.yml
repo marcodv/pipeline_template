@@ -46,3 +46,9 @@
     AWS_PROFILE_ENV: ""
   before_script:
     - export AWS_PROFILE=$AWS_PROFILE_ENV
+
+# Terraform-docs image
+# used to create tf documentation
+.terraform_docs:
+  image:
+    name: $TF_DURABLE_RESOURCE_REGISTRY/terraform-docs:$TERRAFORM_DOCS_VERSION
