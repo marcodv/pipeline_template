@@ -65,6 +65,7 @@
   artifacts:
     paths:
       - tf_docs
+  allow_failure: true
 
 # This template build the Terraform docs
 # and then export the documents as artifacts
@@ -79,3 +80,4 @@
   artifacts:
     paths:
       - public
+  allow_failure: true
