@@ -52,3 +52,30 @@
 .terraform_docs:
   image:
     name: $TF_DURABLE_RESOURCE_REGISTRY/terraform-docs:$TERRAFORM_DOCS_VERSION
+
+# This template TEST the build mkdocs process 
+# with dependencies and later export the artifacts
+.test_mkdocs_build:
+  image: 
+    name: python:3.8-buster
+  before_script:
+    - pip install mkdocs-material
+    - pip install -r requirements.txt
+    - mkdocs build --strict --verbose --site-dir tf_docs
+  artifacts:
+    paths:
+      - tf_docs
+
+# This template build the Terraform docs
+# and then export the documents as artifacts
+.deploy_pages:
+  image: 
+    name: python:3.8-buster
+  before_script:
+    - pip install mkdocs-material
+    - pip install -r requirements.txt
+  after_script:
+    - mkdocs build --strict --verbose
+  artifacts:
+    paths:
+      - public
