@@ -7,7 +7,7 @@ variables:
   PIPELINE_TEMPLATES_REGISTRY: "registry.gitlab.com/noah-energy/noah-pipelines-templates"
   TF_DURABLE_RESOURCE_REGISTRY: "registry.gitlab.com/noah-energy/infranoah/durable-resources-aws"
   TFSEC_VERSION: "0.62.0"
-  TERRAFORM_VERSION: "1.1.3"
+  TERRAFORM_VERSION: "1.1.7"
   TERRAFORM_DOCS_VERSION: "0.9.1"
   AWS_PROD_ENV: "prod"
   AWS_DEV_ENV: "dev"
